@@ -3,6 +3,11 @@
 
 USE [drill_One]
 
+
+/* Create a database with two tables. Assign a foreign key constraint on one table that shares related data with the primary key on the second table. Finally, create a statement that queries data from both tables.
+
+*/
+
 /* Table 1 */
 
 CREATE TABLE Employee (
@@ -40,6 +45,9 @@ SELECT * FROM Employee1;
 /* Query statement from both tables */
 
 
-SELECT Employee.FirstName 
-FROM (Employee
-INNER JOIN Employee1 ON Employee.FirstName = Employee.FirstName);
+
+SELECT EMPLOYEE.EMPLOYEEID, EMPLOYEE1.CONTACT
+FROM (EMPLOYEE 
+INNER JOIN Employee1 ON Employee.EMPLOYEEID = EMPLOYEE1.EMPLOYEEID);
+
+
